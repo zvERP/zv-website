@@ -1,0 +1,149 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * website_local_video
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"PO-Revision-Date: 2026-10-06 00:00+0200\n"
+"Last-Translator: ZV\n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.snippets
+msgid "Local Video"
+msgstr "Vídeo local"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video
+msgid "Upload a video from your computer"
+msgstr "Sube un vídeo desde tu equipo"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Upload / replace"
+msgstr "Subir / reemplazar"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Video"
+msgstr "Vídeo"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Width"
+msgstr "Ancho"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Contained"
+msgstr "Contenido"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Full width"
+msgstr "Ancho completo"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Aspect ratio"
+msgstr "Proporción"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Fit"
+msgstr "Ajuste"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Contain"
+msgstr "Contener"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Cover"
+msgstr "Cubrir"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Show controls"
+msgstr "Mostrar controles"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Autoplay (mutes video)"
+msgstr "Reproducción automática (silencia el vídeo)"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Loop"
+msgstr "Repetir"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video_options
+msgid "Muted"
+msgstr "Silenciado"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video
+msgid "Uploading video…"
+msgstr "Subiendo vídeo…"
+
+#. module: website_local_video
+#: model_terms:ir.ui.view,arch_db:website_local_video.s_local_video
+msgid "Your browser cannot play this video."
+msgstr "Tu navegador no puede reproducir este vídeo."
+
+#. module: website_local_video
+#: code:addons/website_local_video/controllers/main.py:0
+msgid "You do not have permission to edit this website."
+msgstr "No tienes permiso para editar este sitio web."
+
+#. module: website_local_video
+#: code:addons/website_local_video/controllers/main.py:0
+msgid "Select a video file to upload."
+msgstr "Selecciona un archivo de vídeo para subirlo."
+
+#. module: website_local_video
+#: code:addons/website_local_video/controllers/main.py:0
+msgid "Unsupported video format. Use MP4, WebM, OGG, MOV, or M4V."
+msgstr "Formato de vídeo no compatible. Usa MP4, WebM, OGG, MOV o M4V."
+
+#. module: website_local_video
+#: code:addons/website_local_video/controllers/main.py:0
+msgid "The video exceeds the allowed limit of %s MB."
+msgstr "El vídeo supera el límite permitido de %s MB."
+
+#. module: website_local_video
+#: code:addons/website_local_video/controllers/main.py:0
+msgid "The selected video is empty."
+msgstr "El vídeo seleccionado está vacío."
+
+#. module: website_local_video
+#: code:addons/website_local_video/controllers/main.py:0
+msgid "Odoo could not save the video."
+msgstr "Odoo no pudo guardar el vídeo."
+
+#. module: website_local_video
+#: code:addons/website_local_video/controllers/main.py:0
+msgid "Video uploaded from the Website Builder"
+msgstr "Vídeo subido desde el editor del sitio web"
+
+#. module: website_local_video
+#: code:addons/website_local_video/static/src/js/s_local_video_options.js:0
+msgid "The server did not return a valid response."
+msgstr "El servidor no devolvió una respuesta válida."
+
+#. module: website_local_video
+#: code:addons/website_local_video/static/src/js/s_local_video_options.js:0
+msgid "The video could not be uploaded."
+msgstr "No se pudo subir el vídeo."
+
+#. module: website_local_video
+#: code:addons/website_local_video/static/src/js/s_local_video_options.js:0
+msgid "Video upload failed"
+msgstr "Error al subir el vídeo"

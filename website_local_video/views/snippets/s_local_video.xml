@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_local_video" name="Local Video">
+        <section class="s_local_video o_local_video_controls o_cc o_cc1 pt40 pb40"
+                 data-name="Local Video"
+                 data-snippet="s_local_video">
+            <div class="o_local_video_container container">
+                <div class="o_local_video_wrapper ratio ratio-16x9 o_local_video_fit_contain
+                            bg-black rounded overflow-hidden">
+                    <video class="o_local_video_player"
+                           controls="controls"
+                           preload="metadata"
+                           playsinline="playsinline">
+                        Your browser cannot play this video.
+                    </video>
+                    <div class="o_local_video_placeholder" aria-hidden="true">
+                        <span class="fa fa-film fa-3x mb-3"/>
+                        <strong>Upload a video from your computer</strong>
+                        <small>MP4, WebM, OGG, MOV or M4V</small>
+                    </div>
+                    <div class="o_local_video_progress d-none" aria-hidden="true">
+                        <span class="fa fa-spinner fa-spin fa-2x mb-2"/>
+                        <span>Uploading video…</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>
