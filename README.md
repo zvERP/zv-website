@@ -10,6 +10,7 @@ Este repositorio contiene el addon `website_local_video`. Añade un bloque
 - Reemplazo del vídeo desde las opciones del bloque.
 - Controles, reproducción automática, bucle, silencio, proporción, ancho y ajuste.
 - Subidas restringidas a usuarios con permisos de edición del sitio web.
+- Vídeos privados servidos mediante un token no enumerable y limitado al sitio.
 - Límite predeterminado de 100 MB.
 
 ## Instalación
@@ -24,5 +25,6 @@ de sistema `website_local_video.max_file_size_mb`. Odoo, el proxy inverso y el
 servidor web también deben admitir el tamaño de petición elegido.
 
 Para conseguir la máxima compatibilidad entre navegadores, conviene usar MP4
-con vídeo H.264 y audio AAC. Odoo guarda el archivo como un adjunto público del
-sitio web actual; el módulo no transcodifica el vídeo.
+con vídeo H.264 y audio AAC. Odoo guarda el archivo como un adjunto privado del
+sitio web actual y lo sirve únicamente mediante la URL autorizada que genera el
+módulo; el módulo no transcodifica el vídeo.

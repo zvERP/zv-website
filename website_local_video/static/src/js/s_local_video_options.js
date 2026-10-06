@@ -131,6 +131,7 @@ const LocalVideo = options.Class.extend({
         this._syncPlayerOptions();
         player.load();
         target.dataset.videoAttachmentId = result.id;
+        target.dataset.videoAccessToken = result.access_token;
         target.dataset.videoFilename = result.name;
         if (placeholder) {
             placeholder.classList.add("d-none");

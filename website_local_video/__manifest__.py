@@ -1,7 +1,7 @@
 {
     "name": "Website Local Video",
     "summary": "Upload and embed local videos in the Website Builder",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.1.0",
     "category": "Website/Website",
     "author": "ZV",
     "license": "LGPL-3",

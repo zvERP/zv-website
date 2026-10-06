@@ -7,6 +7,7 @@ import os
 from werkzeug.utils import secure_filename
 
 from odoo import _, http
+from odoo.exceptions import AccessError, MissingError, UserError
 from odoo.http import request
 
 
@@ -25,6 +26,48 @@ MAX_CONFIGURABLE_FILE_SIZE_MB = 1024
 
 class WebsiteLocalVideoController(http.Controller):
     """Accept editor uploads and store them as website attachments."""
+
+    @http.route(
+        "/website_local_video/content/<int:attachment_id>",
+        type="http",
+        auth="public",
+        methods=["GET"],
+        csrf=False,
+        website=True,
+    )
+    def video_content(self, attachment_id, access_token=None, **_kwargs):
+        """Stream only a token-authorized video belonging to this website.
+
+        ``/web/content/<id>`` is intentionally not used here.  Besides making
+        the identifier enumerable, that generic route has no knowledge of the
+        website or of the kind of attachment this addon is meant to expose.
+        """
+        if not access_token:
+            raise request.not_found()
+
+        try:
+            attachment = (
+                request.env["ir.attachment"].browse(attachment_id).exists()
+            )
+            if not attachment:
+                raise MissingError("The video attachment does not exist.")
+            attachment = attachment.validate_access(access_token)
+        except (AccessError, MissingError):
+            raise request.not_found()
+
+        if (
+            attachment.type != "binary"
+            or attachment.res_model != "website"
+            or attachment.res_id != request.website.id
+            or attachment.mimetype not in ALLOWED_VIDEO_TYPES
+        ):
+            raise request.not_found()
+
+        try:
+            stream = request.env["ir.binary"]._get_stream_from(attachment, "raw")
+        except (AccessError, MissingError, UserError):
+            raise request.not_found()
+        return stream.get_response(as_attachment=False)
 
     @http.route(
         "/website_local_video/upload",
@@ -92,13 +135,14 @@ class WebsiteLocalVideoController(http.Controller):
                         "name": filename,
                         "raw": content,
                         "mimetype": mimetype,
-                        "public": True,
+                        "public": False,
                         "res_model": "website",
                         "res_id": website.id,
                         "description": _("Video uploaded from the Website Builder"),
                     }
                 )
             )
+            access_token = attachment.generate_access_token()[0]
         except Exception:
             _logger.exception("Could not save a video uploaded from the website editor")
             return self._json_response(
@@ -110,8 +154,16 @@ class WebsiteLocalVideoController(http.Controller):
                 "id": attachment.id,
                 "name": attachment.name,
                 "mimetype": attachment.mimetype,
-                "url": f"/web/content/{attachment.id}",
+                "access_token": access_token,
+                "url": self._video_url(attachment.id, access_token),
             }
+        )
+
+    @staticmethod
+    def _video_url(attachment_id, access_token):
+        return (
+            f"/website_local_video/content/{attachment_id}"
+            f"?access_token={access_token}"
         )
 
     @staticmethod

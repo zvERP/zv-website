@@ -22,10 +22,21 @@ const LocalVideo = publicWidget.Widget.extend({
             player.muted = muted || autoplay;
 
             const attachmentId = Number.parseInt(target.dataset.videoAttachmentId, 10);
-            if (attachmentId > 0) {
-                player.setAttribute("src", `/web/content/${attachmentId}`);
+            const accessToken = target.dataset.videoAccessToken;
+            if (attachmentId > 0 && accessToken) {
+                const token = encodeURIComponent(accessToken);
+                player.setAttribute(
+                    "src",
+                    `/website_local_video/content/${attachmentId}?access_token=${token}`,
+                );
                 if (placeholder) {
                     placeholder.classList.add("d-none");
+                }
+            } else {
+                // Never retain a legacy, enumerable /web/content/<id> URL.
+                player.removeAttribute("src");
+                if (placeholder) {
+                    placeholder.classList.remove("d-none");
                 }
             }
         }
