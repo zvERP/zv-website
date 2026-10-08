@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="snippet_options_background_video"
+              inherit_id="website.snippet_options_background_options"
+              name="Local Background Video Option">
+        <xpath expr="//div[@data-js='BackgroundVideo']/we-row/we-videopicker"
+               position="after">
+            <we-button title="Upload a video from your computer"
+                       class="o_we_bg_brand_primary"
+                       data-upload-local-background-video="true"
+                       data-no-preview="true">
+                Upload local
+            </we-button>
+        </xpath>
+    </template>
+</odoo>

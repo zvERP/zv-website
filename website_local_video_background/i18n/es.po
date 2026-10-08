@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * website_local_video_background
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"PO-Revision-Date: 2026-10-08 00:00+0200\n"
+"Last-Translator: ZV\n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: website_local_video_background
+#: model_terms:ir.ui.view,arch_db:website_local_video_background.snippet_options_background_video
+msgid "Upload a video from your computer"
+msgstr "Sube un vídeo desde tu equipo"
+
+#. module: website_local_video_background
+#: model_terms:ir.ui.view,arch_db:website_local_video_background.snippet_options_background_video
+msgid "Upload local"
+msgstr "Subir local"
+
+#. module: website_local_video_background
+#: code:addons/website_local_video_background/static/src/js/background_video_options.js:0
+msgid "The server did not return a valid response."
+msgstr "El servidor no devolvió una respuesta válida."
+
+#. module: website_local_video_background
+#: code:addons/website_local_video_background/static/src/js/background_video_options.js:0
+msgid "The video could not be uploaded."
+msgstr "No se pudo subir el vídeo."
+
+#. module: website_local_video_background
+#: code:addons/website_local_video_background/static/src/js/background_video_options.js:0
+msgid "Video upload failed"
+msgstr "Error al subir el vídeo"
